@@ -58,11 +58,11 @@ const UserProfile = () => {
 
             const updatedUsers = await axios.get('http://localhost:4000/users');
             setUsers(updatedUsers.data.filter(user => user?.role !== 'admin'));
-            setShowForm(false); // Hide the form after submission
+            setShowForm(false);
             setNewUserName('');
             setNewUserEmail('');
             setNewUserPassword('');
-            setSelectedUser(null); // Clear selected user when toggling the form
+            setSelectedUser(null);
             setNewUserRole('employee');
         } catch (error) {
             console.error('Error adding user:', error);

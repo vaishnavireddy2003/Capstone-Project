@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // ✅ Updated import
-import './signup.css'; // Import the CSS file
+import { useNavigate } from 'react-router-dom'; 
+import './signup.css'; 
 
 const SignUp = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); // ✅ Updated from useHistory to useNavigate
+    const navigate = useNavigate();
 
     const handleSignUp = async (e) => {
         e.preventDefault();
@@ -18,7 +18,7 @@ const SignUp = () => {
                 password,
                 role: 'employee'
             });
-            navigate('/login'); // ✅ Updated from history.push to navigate
+            navigate('/login');
         } catch (error) {
             console.error('Error signing up:', error);
         }

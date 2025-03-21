@@ -47,12 +47,10 @@ const Dashboard = () => {
         event.preventDefault();
 
         try {
-            // Add new Scrum
             const { data: newScrum } = await axios.post('http://localhost:4000/scrums', {
                 name: newScrumName,
             });
 
-            // Add new Task
             await axios.post('http://localhost:4000/tasks', {
                 title: newTaskTitle,
                 description: newTaskDescription,
@@ -62,22 +60,19 @@ const Dashboard = () => {
                 history: [
                     {
                         status: newTaskStatus,
-                        date: new Date().toISOString().split('T')[0], // Current date
+                        date: new Date().toISOString().split('T')[0],
                     },
                 ],
             });
 
-            // Update state instead of re-fetching all scrums
             setScrums([...scrums, newScrum]);
-
-            // Reset form fields and clear previously selected Scrum
             setShowForm(false);
             setNewScrumName('');
             setNewTaskTitle('');
             setNewTaskDescription('');
             setNewTaskStatus('To Do');
             setNewTaskAssignedTo('');
-            setSelectedScrum(null); // Clear previously selected scrum
+            setSelectedScrum(null);
         } catch (error) {
             console.error('Error adding scrum:', error);
         }

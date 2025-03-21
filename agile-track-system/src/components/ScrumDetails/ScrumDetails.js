@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { UserContext } from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
-/*import './scrumdetails.css'; // Import the CSS file*/
 
 const ScrumDetails = ({ scrum }) => {
     const [tasks, setTasks] = useState([]);

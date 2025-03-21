@@ -5,7 +5,7 @@ import Login from './components/Login/Login';
 import UserProfile from './components/UserProfile/UserProfile';
 import SignUp from './components/SignUp/SignUp';
 import { UserProvider, UserContext } from '../src/context/UserContext';
-import './App.css'; // Import CSS file
+import './App.css';
 
 const App = () => {
   return (
@@ -38,7 +38,6 @@ const Nav = () => {
 
   return (
     <nav>
-      {/* Left side navigation links */}
       <div className="nav-links">
         <Link to="/dashboard" className="nav-item">Dashboard</Link>
         {!user && location.pathname !== "/login" && (
@@ -46,8 +45,7 @@ const Nav = () => {
         )}
         {user && <Link to="/profiles" className="nav-item">Profiles</Link>}
       </div>
-
-      {/* Right side - Logout Button */}
+      
       {user && (
         <div className="nav-right">
           <button className="logout-btn" onClick={handleLogout}>Logout</button>
