@@ -1,0 +1,79 @@
+/* Centering the login form */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: -66px;
+  /*background: linear-gradient(135deg, #6a11cb, #2575fc);*/
+  
+}
+
+  /* Styling the form */
+  .login-box {
+    width: 350px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  /* Heading */
+  .login-box h2 {
+    color: #2c2c2c;
+    margin-bottom: 20px;
+  }
+
+  /* Input Fields */
+  .input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .input-container input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Login Button */
+  .login-btn {
+    width: 101%;
+    padding: 12px;
+    border: none;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .login-btn:hover {
+    opacity: 0.9;
+  }
+
+  /* Signup and Dashboard Links */
+  .navigation-links {
+    margin-top: 25px;
+    font-size: 14px;
+  }
+
+  .navigation-links a {
+    color: #6a11cb;
+    font-weight: bold;
+    text-decoration: none;
+    /*margin-top: 8px;
+    display: block;
+    margin-top: 20px;*/
+  }
+
+  .navigation-links a:hover {
+    text-decoration: none;
+  }
