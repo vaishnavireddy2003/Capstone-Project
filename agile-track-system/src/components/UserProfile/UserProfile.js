@@ -4,16 +4,17 @@ import { UserContext } from '../../context/UserContext';
 import './userprofile.css';
 
 const UserProfile = () => {
-    const [users, setUsers] = useState([]);
-    const [tasks, setTasks] = useState([]);
-    const [selectedUser, setSelectedUser] = useState(null);
-    const [showForm, setShowForm] = useState(false);
+    const [users, setUsers] = useState([]); // Stores the list of all users (excluding admins)
+    const [tasks, setTasks] = useState([]); //Stores tasks assigned to a selected user
+    const [selectedUser, setSelectedUser] = useState(null); //Stores the currently selected user for viewing task history
+    const [showForm, setShowForm] = useState(false); //Controls visibility of the "Add User" form (Admin only)
     const [newUserName, setNewUserName] = useState('');
     const [newUserEmail, setNewUserEmail] = useState('');
     const [newUserPassword, setNewUserPassword] = useState('');
-    const [newUserRole, setNewUserRole] = useState('employee');
+    const [newUserRole, setNewUserRole] = useState('employee'); // Stores form input values for adding a new user
     const { user } = useContext(UserContext);
 
+    //Fetching User & Task Data
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -31,6 +32,7 @@ const UserProfile = () => {
         fetchUsers();
     }, [user]);
 
+    //Fetch Tasks for a User
     const fetchTasks = async (userId) => {
         try {
             const response = await axios.get(`http://localhost:4000/tasks?assignedTo=${userId}`);
@@ -40,11 +42,13 @@ const UserProfile = () => {
         }
     };
 
+    //Viewing Task History
     const handleGetHistory = (userId) => {
         setSelectedUser(users.find(user => user?.id === userId));
         fetchTasks(userId);
     };
 
+    //Adding a New User 
     const handleAddUser = async (event) => {
         event.preventDefault();
 

@@ -5,17 +5,18 @@ import { UserContext } from '../../context/UserContext';
 import './dashboard.css';
 
 const Dashboard = () => {
-    const [scrums, setScrums] = useState([]);
-    const [selectedScrum, setSelectedScrum] = useState(null);
-    const [showForm, setShowForm] = useState(false);
-    const [users, setUsers] = useState([]);
+    const [scrums, setScrums] = useState([]); //Stores the list of Scrum teams
+    const [selectedScrum, setSelectedScrum] = useState(null); //Stores details of the selected Scrum team
+    const [showForm, setShowForm] = useState(false); //Toggles the Scrum creation form (visible only to admins)
+    const [users, setUsers] = useState([]); //Stores the list of users (for assigning tasks)
     const [newScrumName, setNewScrumName] = useState('');
     const [newTaskTitle, setNewTaskTitle] = useState('');
     const [newTaskDescription, setNewTaskDescription] = useState('');
     const [newTaskStatus, setNewTaskStatus] = useState('To Do');
-    const [newTaskAssignedTo, setNewTaskAssignedTo] = useState('');
+    const [newTaskAssignedTo, setNewTaskAssignedTo] = useState(''); //Used to handle form inputs
     const { user } = useContext(UserContext);
 
+    //Data Fetching
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -30,19 +31,21 @@ const Dashboard = () => {
             }
         };
 
-        fetchData();
+        fetchData(); //Fetches Scrum teams and users from a local API
     }, []);
 
+    //Viewing Scrum Details
     const handleGetDetails = async (scrumId) => {
         try {
             const { data } = await axios.get(`http://localhost:4000/scrums/${scrumId}`);
-            setSelectedScrum(data);
+            setSelectedScrum(data); 
 
         } catch (error) {
             console.error('Error fetching scrum details:', error);
         }
     };
 
+    //Adding a New Scrum
     const handleAddScrum = async (event) => {
         event.preventDefault();
 

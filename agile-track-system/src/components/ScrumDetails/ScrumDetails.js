@@ -4,11 +4,12 @@ import { UserContext } from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 
 const ScrumDetails = ({ scrum }) => {
-    const [tasks, setTasks] = useState([]);
-    const [users, setUsers] = useState([]);
+    const [tasks, setTasks] = useState([]); //Stores the list of tasks related to the selected Scrum
+    const [users, setUsers] = useState([]); //Stores the list of users assigned to the tasks
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
 
+    //Authentication Check 
     useEffect(() => {
         const loggedInUser = JSON.parse(localStorage.getItem('user'));
         if (!loggedInUser) {
@@ -16,6 +17,7 @@ const ScrumDetails = ({ scrum }) => {
         }
     }, [navigate]);
 
+    //Fetch Scrum Details 
     useEffect(() => {
         setTasks([]);
         setUsers([]);
@@ -44,6 +46,7 @@ const ScrumDetails = ({ scrum }) => {
         fetchScrumData();
     }, [scrum?.id]);
 
+    //Task Status Update
     const handleStatusChange = async (taskId, newStatus) => {
         try {
             const updatedTask = tasks.find(task => task.id === taskId);

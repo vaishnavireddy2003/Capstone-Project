@@ -5,11 +5,12 @@ import { UserContext } from '../../context/UserContext';
 import './login.css';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState(''); //Stores user input for the email field
+    const [password, setPassword] = useState(''); //Stores user input for the password field
     const navigate = useNavigate();
     const { login } = useContext(UserContext);
 
+    //Authentication Handling
     const handleLogin = async (e) => {
         e.preventDefault();
         try {

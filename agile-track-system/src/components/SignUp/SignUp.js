@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import './signup.css'; 
 
 const SignUp = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [name, setName] = useState(''); //Stores the user’s entered name
+    const [email, setEmail] = useState(''); //Stores the user’s entered email
+    const [password, setPassword] = useState(''); //Stores the user’s entered password
     const navigate = useNavigate();
 
+    //Handling User Registration
     const handleSignUp = async (e) => {
         e.preventDefault();
         try {
@@ -18,7 +19,7 @@ const SignUp = () => {
                 password,
                 role: 'employee'
             });
-            navigate('/login');
+            navigate('/login'); //redirect users to login page after successful registration
         } catch (error) {
             console.error('Error signing up:', error);
         }
