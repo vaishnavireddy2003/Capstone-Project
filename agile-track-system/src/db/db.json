@@ -41,6 +41,13 @@
       "email": "employee5@example.com",
       "password": "password5",
       "role": "employee"
+    },
+    {
+      "id": "9b08",
+      "name": "Employee six",
+      "email": "employee6@example.com",
+      "password": "password6",
+      "role": "employee"
     }
   ],
   "scrums": [
@@ -59,6 +66,10 @@
     {
       "id": "d489",
       "name": "Scrum Team D"
+    },
+    {
+      "id": "07c0",
+      "name": "Scrum Team E"
     }
   ],
   "tasks": [
@@ -66,7 +77,7 @@
       "id": "1",
       "title": "Task One",
       "description": "Description for Task One",
-      "status": "To Do",
+      "status": "In Progress",
       "scrumId": 1,
       "assignedTo": 2,
       "history": [
@@ -117,6 +128,10 @@
         {
           "status": "To Do",
           "date": "2025-03-20"
+        },
+        {
+          "status": "In Progress",
+          "date": "2025-03-21"
         }
       ]
     },
@@ -171,6 +186,20 @@
       "status": "To Do",
       "scrumId": "d489",
       "assignedTo": "4",
+      "history": [
+        {
+          "status": "To Do",
+          "date": "2025-03-21"
+        }
+      ]
+    },
+    {
+      "id": "4133",
+      "title": "abc",
+      "description": "abc",
+      "status": "To Do",
+      "scrumId": "07c0",
+      "assignedTo": "1699",
       "history": [
         {
           "status": "To Do",
