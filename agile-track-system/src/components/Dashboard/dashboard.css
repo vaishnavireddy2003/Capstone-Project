@@ -1,0 +1,138 @@
+/* General Layout */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    margin-top: -90px;
+    text-align: center;
+    
+}
+
+h2 {
+    font-size: 24px;
+    color: darkblack;
+}
+
+/* Form Container */
+.form-container {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 47%;
+    margin-bottom: 20px;
+}
+
+.toggle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.scrum-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.scrum-form label {
+    font-weight: bold;
+}
+
+.scrum-form input, 
+.scrum-form textarea {
+    width: 100%;
+    box-sizing: border-box; /* Prevents padding from affecting width */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.scrum-form select {
+    width: 100%; /* Allows dropdowns to maintain their original size */
+    padding: 8px;
+    margin-bottom: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Scrum List */
+.scrum-list {
+    list-style-type: none;
+    padding: 0;
+    width: 50%;
+}
+
+.scrum-item {
+    background: whitesmoke;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);*/
+}
+
+.details-button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
+* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.logout-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
